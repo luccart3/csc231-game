@@ -1,11 +1,13 @@
 #include "move.h"
 #include "entity.h"
 #include <iostream>
+#include <memory>
+#include "engine.h"
 
 Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
-    Move m = Move(direction);
-    Vec position = entity->get_position();
-    Tile& tile = engine.dungeon.get_tile(position);
+    entity->change_direction(direction);
+    Vec tile_go = entity->get_position() + direction;
+    Tile& tile = engine.dungeon.get_tile(tile_go);
 
     if (tile.is_wall() || tile.has_entity()) {
         return failure();
@@ -16,15 +18,13 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     }
 
     else {
-        entity->move_to(position);
+        entity->move_to(tile_go);
         return success();
     }
 }
 
-Move::Move(Vec direction) {
-    Vec position;
-    Vec new_position = position + direction;
-}
+Move::Move(Vec direction)
+     : direction{direction}{}
 
 
 //if (tile = door) { go through door }
