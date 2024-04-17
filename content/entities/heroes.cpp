@@ -3,10 +3,12 @@
 #include "engine.h"
 #include "rest.h"
 #include "move.h"
+#include "closedoor .h"
+
 
 namespace Heroes {
 void make_ogre(std::shared_ptr<Entity>& hero) {
-    hero->set_sprite("ogre");
+    hero->set_sprite("muddy");
     hero->set_max_health((50));
     hero->behavior = behavior;
 }
@@ -14,6 +16,9 @@ std::unique_ptr<Action> behavior(Engine& engine, Entity&) {
     std::string key = engine.input.get_last_keypress();
     if (key == "R") {
         return std::make_unique<Rest>();
+    }
+    if (key == "C") {
+        return std::make_unique<CloseDoor>();
     }
     if (key == "D") {
         return std::make_unique<Move>(Vec{1, 0});

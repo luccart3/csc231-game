@@ -1,8 +1,8 @@
 #include "move.h"
 #include "entity.h"
-#include <iostream>
 #include <memory>
 #include "engine.h"
+#include "opendoor.h"
 
 Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     entity->change_direction(direction);
@@ -13,8 +13,8 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
         return failure();
     }
 
-    else if (tile.has_door()) {
-        return failure();
+    else if (tile.has_door() && !tile.door->is_open()) {
+        return alternative(OpenDoor{*tile.door});
     }
 
     else {
