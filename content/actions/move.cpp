@@ -3,14 +3,19 @@
 #include <memory>
 #include "engine.h"
 #include "opendoor.h"
+#include "rest.h"
 
 Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     entity->change_direction(direction);
     Vec tile_go = entity->get_position() + direction;
     Tile& tile = engine.dungeon.get_tile(tile_go);
 
-    if (tile.is_wall() || tile.has_entity()) {
+    if (tile.is_wall()) {
         return failure();
+    }
+
+    else if (tile.has_entity()) {
+        return alternative(Rest());
     }
 
     else if (tile.has_door() && !tile.door->is_open()) {
