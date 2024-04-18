@@ -1,14 +1,14 @@
 #include "heroes.h"
-#include "action.h"
-#include "engine.h"
-#include "rest.h"
-#include "move.h"
-#include "closedoor .h"
 
+#include "action.h"
+#include "closedoor.h"
+#include "engine.h"
+#include "move.h"
+#include "rest.h"
 
 namespace Heroes {
 void make_ogre(std::shared_ptr<Entity>& hero) {
-    hero->set_sprite("muddy");
+    hero->set_sprite("ogre");
     hero->set_max_health((50));
     hero->behavior = behavior;
 }
