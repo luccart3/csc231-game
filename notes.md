@@ -25,3 +25,12 @@ Ideas:
 * tnt on floor and pressure plate
 * shape-shifter
   * kill enemy, turn into them, don't get attacked by enemies of that type? 
+
+Frames:
+* these frames represent how much logic is computed a second... this game is at 10 frames per second
+* once execute has been called (# of frames) times, event is done
+* when done cleans up/resets , optional 
+
+Events: 
+* make stuff as simple as possible
+* 
