@@ -5,12 +5,14 @@
 #include "engine.h"
 #include "move.h"
 #include "rest.h"
+#include "spiked_club.h"
 
 namespace Heroes {
 void make_ogre(std::shared_ptr<Entity>& hero) {
     hero->set_sprite("ogre");
     hero->set_max_health((50));
     hero->behavior = behavior;
+    hero->add_to_inventory(std::make_shared<Spiked_Club>(5));
 }
 std::unique_ptr<Action> behavior(Engine& engine, Entity&) {
     std::string key = engine.input.get_last_keypress();
