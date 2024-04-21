@@ -21,7 +21,7 @@ void make_muddy(std::shared_ptr<Entity>& monster) {
 
 void make_demon_big(std::shared_ptr<Entity>& monster) {
     monster->set_sprite("demon_big");
-    monster->set_max_health(12);
+    monster->set_max_health(15);
     monster->behavior = behavior_boring;
 }
 
