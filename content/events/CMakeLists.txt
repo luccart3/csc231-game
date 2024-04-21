@@ -1,5 +1,8 @@
 add_library(events
   updatefov.cpp
+        hit.h
+        hit.cpp
+        die.cpp
 )
 
 target_include_directories(events PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
