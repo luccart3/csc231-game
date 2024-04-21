@@ -22,10 +22,8 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
         return alternative(OpenDoor{*tile.door});
     }
 
-    else {
-        entity->move_to(tile_go);
-        return success();
-    }
+    entity->move_to(tile_go); //needs to be changed somehow
+    return success();
 }
 
 Move::Move(Vec direction)
