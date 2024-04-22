@@ -4,6 +4,7 @@
 #include "engine.h"
 #include "opendoor.h"
 #include "rest.h"
+#include "attack.h"
 
 Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     entity->change_direction(direction);
@@ -15,14 +16,16 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     }
 
     else if (tile.has_entity()) {
-        return alternative(Rest());
+        if (entity->get_team() != tile.entity->get_team()) {
+            return alternative(Attack(*tile.entity));
+        }
     }
 
     else if (tile.has_door() && !tile.door->is_open()) {
         return alternative(OpenDoor{*tile.door});
     }
 
-    entity->move_to(tile_go); //needs to be changed somehow
+    entity->move_to(tile_go);
     return success();
 }
 

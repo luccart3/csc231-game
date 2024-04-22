@@ -1,5 +1,5 @@
 #include "heroes.h"
-
+#include "entity.h"
 #include "action.h"
 #include "closedoor.h"
 #include "engine.h"
@@ -33,6 +33,11 @@ std::unique_ptr<Action> behavior(Engine& engine, Entity&) {
     }
     if (key == "S") {
         return std::make_unique<Move>(Vec{0, -1});
+    }
+
+    else if (!key.empty() && std::isdigit(key.at(0))){
+        int item_num = std::stoi(key) - 1; // "1" -> index 0
+//        entity.select_item(item_num);
     }
     return nullptr;
 }
