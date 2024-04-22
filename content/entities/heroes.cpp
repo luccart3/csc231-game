@@ -14,7 +14,7 @@ void make_ogre(std::shared_ptr<Entity>& hero) {
     hero->behavior = behavior;
     hero->add_to_inventory(std::make_shared<Spiked_Club>(5));
 }
-std::unique_ptr<Action> behavior(Engine& engine, Entity&) {
+std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
     std::string key = engine.input.get_last_keypress();
     if (key == "R") {
         return std::make_unique<Rest>();
@@ -37,7 +37,7 @@ std::unique_ptr<Action> behavior(Engine& engine, Entity&) {
 
     else if (!key.empty() && std::isdigit(key.at(0))){
         int item_num = std::stoi(key) - 1; // "1" -> index 0
-//        entity.select_item(item_num);
+        entity.select_item(item_num);
     }
     return nullptr;
 }
