@@ -2,7 +2,6 @@
 #include "hit.h"
 #include "engine.h"
 
-// content/items/spear.cpp
 Spiked_Club::Spiked_Club(int damage)
     :Item{"spiked_club"}, damage{damage} {}
 

@@ -5,12 +5,15 @@
 #include "action.h"
 #include "wander.h"
 #include "move.h"
+#include "spiked_club.h"
 
 namespace Monsters {
 void make_orc_masked(std::shared_ptr<Entity>& monster) {
     monster->set_sprite("orc_masked");
     monster->set_max_health(12);
     monster->behavior = behavior_aggressive;
+    monster->add_to_inventory(std::make_shared<Spiked_Club>(5));
+
 }
 
 void make_muddy(std::shared_ptr<Entity>& monster) {
@@ -46,7 +49,7 @@ std::unique_ptr<Action> behavior_aggressive(Engine& engine, Entity& entity) {
     }
 }
 
-std::unique_ptr<Action> behavior_wander(Engine& engine, Entity& entity) {
+std::unique_ptr<Action> behavior_wander(Engine&, Entity&) {
     if (probability(66)) { // engine/util/randomness.h
         return std::make_unique<Wander>();
     }
@@ -55,7 +58,7 @@ std::unique_ptr<Action> behavior_wander(Engine& engine, Entity& entity) {
     }
 }
 
-std::unique_ptr<Action> behavior_boring(Engine& engine, Entity& entity) {
+std::unique_ptr<Action> behavior_boring(Engine&, Entity&) {
     return std::make_unique<Rest>();
 }
 
