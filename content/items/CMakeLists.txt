@@ -3,6 +3,8 @@ add_library(items
         spiked_club.cpp
         spear.h
         spear.cpp
+        sword_rusty.h
+        sword_rusty.cpp
 )
 
 target_include_directories(items PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
