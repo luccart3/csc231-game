@@ -6,11 +6,12 @@
 #include "wander.h"
 #include "move.h"
 #include "spiked_club.h"
+#include "sword_rusty.h"
 
 namespace Monsters {
 void make_orc_masked(std::shared_ptr<Entity>& monster) {
     monster->set_sprite("orc_masked");
-    monster->set_max_health(12);
+    monster->set_max_health(10);
     monster->behavior = behavior_aggressive;
     monster->add_to_inventory(std::make_shared<Spiked_Club>(5));
 
@@ -20,6 +21,8 @@ void make_muddy(std::shared_ptr<Entity>& monster) {
     monster->set_sprite("muddy");
     monster->set_max_health(5);
     monster->behavior = behavior_wander;
+    monster->add_to_inventory(std::make_shared<Sword_Rusty>(2));
+
 }
 
 void make_demon_big(std::shared_ptr<Entity>& monster) {
