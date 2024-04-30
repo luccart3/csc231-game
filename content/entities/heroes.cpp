@@ -7,6 +7,7 @@
 #include "rest.h"
 #include "spiked_club.h"
 #include "spear.h"
+#include "healing_potion.h"
 
 namespace Heroes {
 void make_ogre(std::shared_ptr<Entity>& hero) {
@@ -15,6 +16,7 @@ void make_ogre(std::shared_ptr<Entity>& hero) {
     hero->behavior = behavior;
     hero->add_to_inventory(std::make_shared<Spiked_Club>(5));
     hero->add_to_inventory(std::make_shared<Spear>(3));
+    hero->add_to_inventory(std::make_shared<Healing_Potion>(15));
 
 }
 std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
