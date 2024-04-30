@@ -9,6 +9,8 @@ add_library(events
         sound.cpp
         recover.h
         recover.cpp
+        drink.h
+        drink.cpp
 )
 
 target_include_directories(events PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
