@@ -3,6 +3,12 @@ add_library(events
         hit.cpp
         die.cpp
         thrust.cpp
+        swing.h
+        swing.cpp
+        animation.cpp
+        sound.cpp
+        recover.h
+        recover.cpp
 )
 
 target_include_directories(events PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

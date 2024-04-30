@@ -5,6 +5,8 @@ add_library(items
         spear.cpp
         sword_rusty.h
         sword_rusty.cpp
+        healing_potion.h
+        healing_potion.cpp
 )
 
 target_include_directories(items PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
