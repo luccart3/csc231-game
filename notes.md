@@ -20,7 +20,7 @@ Wander:
 
 Ideas: 
 * save function
-* ladders and floors 
+* ladders and floors
 * levels
 * tnt on floor and pressure plate
 * shape-shifter
@@ -33,4 +33,14 @@ Frames:
 
 Events: 
 * make stuff as simple as possible
-* 
+
+Ladders/Floors:
+* Make ladder/pit item 
+* interact function inside 
+* recreates dungeon
+* find open tile 
+* reloads actors 
+
+Healing Potion: 
+* need to make it usable by button 
+* delete when done 
