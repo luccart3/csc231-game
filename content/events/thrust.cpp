@@ -1,6 +1,6 @@
 #include "thrust.h"
 
-constexpr int duration = 10; //number of frames
+constexpr int duration = 3; //number of frames
 
 constexpr int delta = 3; //pixels
 
@@ -18,9 +18,13 @@ Thrust::Thrust(Sprite& sprite, Vec direction)
     }
     else if (direction == Vec{0,1}) { //up
         sprite.angle = 0;
+        this->direction = -1 * direction;
     }
     else { //down
         sprite.angle = 180;
+        sprite.shift.y += sprite.size.y;
+        this->direction = -1 * direction;
+
     }
 }
 
@@ -30,5 +34,6 @@ void Thrust::execute(Engine&) {
 }
 
 void Thrust::when_done(Engine& engine) {
+    sprite = copy;
 
 }
