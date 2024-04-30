@@ -8,9 +8,9 @@
 Healing_Potion::Healing_Potion(int recovery)
     :Item{"potion_red"}, recovery{recovery} {}
 
-void Healing_Potion::use(Engine& engine, Entity& attacker, Entity&) {
-    engine.events.create_event<Drink>(sprite, attacker.get_direction());
-    engine.events.create_event<Recover>(attacker, recovery);
+void Healing_Potion::use(Engine& engine, Entity& owner) {
+    engine.events.create_event<Drink>(sprite, owner.get_direction());
+    engine.events.create_event<Recover>(owner, recovery);
     engine.events.create_event<Sound>("slurp");
 }
 

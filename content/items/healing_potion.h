@@ -5,8 +5,9 @@
 class Healing_Potion : public Item {
 public:
     explicit Healing_Potion(int recovery);
-    // cause damage to defender
-    void use(Engine& engine, Entity& attacker, Entity& defender) override;
+    // recovery is amount of health regained
+    // heal owner
+    void use(Engine& engine, Entity& owner) override;
 
 private:
     int recovery;

@@ -44,3 +44,4 @@ Ladders/Floors:
 Healing Potion: 
 * need to make it usable by button 
 * delete when done 
+* drinking animation
