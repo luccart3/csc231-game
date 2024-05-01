@@ -2,6 +2,7 @@
 ## Class Notes
 
 TO DO: 
+* delete potion on use 
 * balance hp and damage
 * ladder item 
   * interact causes dungeon and actors to reload
