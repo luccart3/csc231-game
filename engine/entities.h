@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include "item.h"
 #include <deque>
 
 // forward declarations
@@ -21,7 +22,6 @@ public:
     [[nodiscard]] auto begin() const { return std::begin(entities); }
     auto end() { return std::end(entities); }
     [[nodiscard]] auto end() const { return std::end(entities); }
-
 private:
     const int cost_of_turn{8}; // energy need for taking a turn
     std::deque<std::shared_ptr<Entity>> entities;
