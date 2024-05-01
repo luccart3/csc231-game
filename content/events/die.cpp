@@ -1,5 +1,3 @@
-#pragma once
-
 #include "die.h"
 #include "engine.h"
 #include "entity.h"
