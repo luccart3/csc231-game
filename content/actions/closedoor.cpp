@@ -8,7 +8,7 @@ Result CloseDoor::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     bool closed_any_doors{false};
     for (Vec neighbor : neighbors) {
         Tile& tile = engine.dungeon.get_tile(neighbor);
-        if (tile.has_door() && tile.door->is_open()) {
+        if (tile.has_door() && tile.door->is_open() && !tile.has_entity()) {
             tile.door->close();
             closed_any_doors = true;
         }
