@@ -7,6 +7,7 @@
 #include "move.h"
 #include "spiked_club.h"
 #include "sword_rusty.h"
+#include "bite.h"
 
 namespace Monsters {
 void make_orc_masked(std::shared_ptr<Entity>& monster) {
@@ -28,7 +29,9 @@ void make_muddy(std::shared_ptr<Entity>& monster) {
 void make_demon_big(std::shared_ptr<Entity>& monster) {
     monster->set_sprite("demon_big");
     monster->set_max_health(15);
-    monster->behavior = behavior_boring;
+    monster->behavior = behavior_aggressive;
+    monster->add_to_inventory(std::make_shared<Bite>(10));
+
 }
 
 std::unique_ptr<Action> behavior_aggressive(Engine& engine, Entity& entity) {

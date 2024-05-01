@@ -2,7 +2,11 @@
 ## Class Notes
 
 TO DO: 
-* change sound and animation for spiked club 
+* balance hp and damage
+* ladder item 
+  * interact causes dungeon and actors to reload
+* TNT pressure plate 
+  * stepping on pressure plate tile creates explosion animation that damages all neighbors
 
 For Actions: 
 * always use failure, success, and alternative
