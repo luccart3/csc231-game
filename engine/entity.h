@@ -55,6 +55,8 @@ public:
     void update();
     [[nodiscard]] std::vector<Sprite> get_sprites() const;
 
+    void remove_item(Item* item);
+
 private:
     Engine& engine;
     AnimatedSprite sprite;
