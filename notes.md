@@ -1,6 +1,9 @@
 # *CSC 231 GAME*
 ## Class Notes
 
+TO DO: 
+* change sound and animation for spiked club 
+
 For Actions: 
 * always use failure, success, and alternative
 * for move, we need something that looks like:
