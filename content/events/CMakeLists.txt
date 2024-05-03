@@ -13,6 +13,8 @@ add_library(events
         drink.cpp
         raise.h
         raise.cpp
+        remove_item.h
+        remove_item.cpp
 )
 
 target_include_directories(events PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
