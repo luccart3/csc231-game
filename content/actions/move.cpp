@@ -5,6 +5,7 @@
 #include "opendoor.h"
 #include "rest.h"
 #include "attack.h"
+#include "interact.h"
 
 Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     entity->change_direction(direction);
@@ -23,6 +24,11 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
 
     else if (tile.has_door() && !tile.door->is_open()) {
         return alternative(OpenDoor{*tile.door});
+    }
+
+    else if (tile.has_item()) {
+        //need to make it so only hero can interact
+        return alternative(Interact{tile});
     }
 
     entity->move_to(tile_go);
