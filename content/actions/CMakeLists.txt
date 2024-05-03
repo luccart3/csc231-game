@@ -7,6 +7,8 @@ add_library(actions
         attack.cpp
         use_item.h
         use_item.cpp
+        interact.h
+        interact.cpp
 )
 
 target_include_directories(actions PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
