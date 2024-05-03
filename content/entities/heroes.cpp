@@ -11,6 +11,7 @@
 #include "healing_potion.h"
 #include "item.h"
 #include "lightning_staff.h"
+#include "use_item.h"
 
 namespace Heroes {
 void make_ogre(std::shared_ptr<Entity>& hero) {
@@ -33,10 +34,8 @@ std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
     if (key == "C") {
         return std::make_unique<CloseDoor>();
     }
-    if (key == "E") { //for items used on self
-        std::shared_ptr<Item> item = entity.get_current_item();
-        item->use(engine, entity);
-        return std::make_unique<Rest>(); //uses turn
+    if (key == "E") {
+        return std::make_unique<UseItem>();
     }
     if (key == "D") {
         return std::make_unique<Move>(Vec{1, 0});
