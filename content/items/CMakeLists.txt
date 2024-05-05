@@ -12,6 +12,8 @@ add_library(items
         ladder.cpp
         tnt_button.cpp
         pressed_button.cpp
+        heal_button.h
+        heal_button.cpp
 )
 
 target_include_directories(items PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
