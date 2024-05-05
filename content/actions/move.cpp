@@ -28,6 +28,7 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
 
     else if (tile.has_item()) {
         //need to make it so only hero can interact
+        entity->move_to(tile_go);
         return alternative(Interact{tile});
     }
 
