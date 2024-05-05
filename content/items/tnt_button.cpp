@@ -18,6 +18,7 @@ void TNTButton::interact(Engine& engine, Entity& entity) {
     std::shared_ptr<Event> explosion =
         std::make_shared<Animation>("explosion", position);
     button_press->add_next(explosion);
+    button_press->add_next(Sound("explosion"));
     explosion->add_next(Hit{entity,damage});
 
     //hits entities in adjacent tiles
