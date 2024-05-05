@@ -10,6 +10,7 @@ add_library(items
         lightning_staff.cpp
         ladder.h
         ladder.cpp
+        tnt_button.cpp
 )
 
 target_include_directories(items PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

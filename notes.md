@@ -1,13 +1,14 @@
 # *CSC 231 GAME*
 ## Class Notes
 
-TO DO: 
-* delete potion on use 
+TO DO:
 * balance hp and damage
 * ladder item 
   * interact causes dungeon and actors to reload
+  * interact action if tile has item
 * TNT pressure plate 
   * stepping on pressure plate tile creates explosion animation that damages all neighbors
+  * decoy that does nothing but change to pressed sprite 
 
 For Actions: 
 * always use failure, success, and alternative
