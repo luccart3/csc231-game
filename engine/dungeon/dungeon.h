@@ -30,6 +30,8 @@ public:
 
     // Removes an entity from the given tile position
     void remove_entity(const Vec& position);
+    void remove_item(const Vec& position);
+
 
     // Access to dungeon tiles
     Tile& get_tile(const Vec& position);

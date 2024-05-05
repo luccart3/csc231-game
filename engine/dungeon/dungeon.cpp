@@ -44,6 +44,10 @@ void Dungeon::remove_entity(const Vec& position) {
     tiles(position).entity = nullptr;
 }
 
+void Dungeon::remove_item(const Vec& position) {
+    tiles(position).item = nullptr;
+}
+
 Tile& Dungeon::get_tile(const Vec& position) {
     return tiles(position);
 }
