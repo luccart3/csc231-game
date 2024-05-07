@@ -16,7 +16,7 @@ Result Wander::perform(Engine& engine, std::shared_ptr<Entity> entity) {
     // find first open floor tile
     for (const Vec& neighbor : neighbors) {
         Tile& tile = engine.dungeon.get_tile(neighbor);
-        if (!tile.is_wall() && !tile.has_entity()) {
+        if (!tile.is_wall() && !tile.has_entity() &&!tile.has_item()) {
             Vec direction = neighbor - position;
             return alternative(Move{direction});
         }
