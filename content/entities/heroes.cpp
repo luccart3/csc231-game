@@ -20,9 +20,6 @@ void make_ogre(std::shared_ptr<Entity>& hero) {
     hero->behavior = behavior;
     hero->add_to_inventory(std::make_shared<Spiked_Club>(5));
     hero->add_to_inventory(std::make_shared<Spear>(3));
-    hero->add_to_inventory(std::make_shared<Sword_Rusty>(2));
-    hero->add_to_inventory(std::make_shared<Healing_Potion>(15));
-    hero->add_to_inventory(std::make_shared<Lightning_Staff>(30));
 }
 std::unique_ptr<Action> behavior(Engine& engine, Entity& entity) {
     std::string key = engine.input.get_last_keypress();
