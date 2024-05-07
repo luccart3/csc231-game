@@ -21,3 +21,10 @@ void Healing_Potion::use(Engine& engine, Entity& owner) {
     engine.events.create_event<Sound>("slurp");
 }
 
+void Healing_Potion::interact(Engine& engine, Entity& entity) {
+    Vec position = entity.get_position();
+    Tile& tile = engine.dungeon.get_tile(position);
+    entity.add_to_inventory(tile.item);
+    engine.dungeon.remove_item(position);
+}
+
