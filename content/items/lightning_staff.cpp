@@ -20,5 +20,12 @@ void Lightning_Staff::use(Engine& engine, Entity& attacker, Entity& defender) {
     engine.events.create_event<Sound>("thunder");
 }
 
+void Lightning_Staff::interact(Engine& engine, Entity& entity) {
+    Vec position = entity.get_position();
+    Tile& tile = engine.dungeon.get_tile(position);
+    entity.add_to_inventory(tile.item);
+    engine.dungeon.remove_item(position);
+}
+
 
 
