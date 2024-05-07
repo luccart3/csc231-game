@@ -20,6 +20,9 @@ Result Move::perform(Engine& engine, std::shared_ptr<Entity> entity) {
         if (entity->get_team() != tile.entity->get_team()) {
             return alternative(Attack(*tile.entity));
         }
+        else {
+            return alternative(Rest{});
+        }
     }
 
     else if (tile.has_door() && !tile.door->is_open()) {
