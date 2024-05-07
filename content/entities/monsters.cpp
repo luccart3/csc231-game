@@ -15,7 +15,6 @@ void make_orc_masked(std::shared_ptr<Entity>& monster) {
     monster->set_max_health(10);
     monster->behavior = behavior_aggressive;
     monster->add_to_inventory(std::make_shared<Spiked_Club>(5));
-
 }
 
 void make_muddy(std::shared_ptr<Entity>& monster) {
@@ -23,7 +22,6 @@ void make_muddy(std::shared_ptr<Entity>& monster) {
     monster->set_max_health(5);
     monster->behavior = behavior_wander;
     monster->add_to_inventory(std::make_shared<Sword_Rusty>(2));
-
 }
 
 void make_demon_big(std::shared_ptr<Entity>& monster) {
@@ -31,7 +29,6 @@ void make_demon_big(std::shared_ptr<Entity>& monster) {
     monster->set_max_health(15);
     monster->behavior = behavior_aggressive;
     monster->add_to_inventory(std::make_shared<Bite>(10));
-
 }
 
 std::unique_ptr<Action> behavior_aggressive(Engine& engine, Entity& entity) {
@@ -42,24 +39,21 @@ std::unique_ptr<Action> behavior_aggressive(Engine& engine, Entity& entity) {
         if (path.size() > 1) {
             auto direction = path.at(1) - path.at(0);
             return std::make_unique<Move>(direction);
-        }
-        else {
+        } else {
             return std::make_unique<Rest>();
         }
     }
     if (probability(66)) {
         return std::make_unique<Wander>();
-    }
-    else {
+    } else {
         return std::make_unique<Rest>();
     }
 }
 
 std::unique_ptr<Action> behavior_wander(Engine&, Entity&) {
-    if (probability(66)) { // engine/util/randomness.h
+    if (probability(66)) {  // engine/util/randomness.h
         return std::make_unique<Wander>();
-    }
-    else {
+    } else {
         return std::make_unique<Rest>();
     }
 }
