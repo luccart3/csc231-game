@@ -4,6 +4,8 @@
 #include <iostream>
 #include "tnt_button.h"
 #include "heal_button.h"
+#include "lightning_staff.h"
+#include "healing_potion.h"
 
 int main() {
     try {
@@ -27,6 +29,10 @@ int main() {
         tnt_button->sprite = engine.graphics.get_sprite(tnt_button->name);
         auto heal_button = std::make_shared<HealButton>(25);
         heal_button->sprite = engine.graphics.get_sprite(heal_button->name);
+        auto lightning_staff = std::make_shared<Lightning_Staff>(25);
+        lightning_staff->sprite = engine.graphics.get_sprite(lightning_staff->name);
+        auto healing_potion = std::make_shared<Healing_Potion>(25);
+        healing_potion->sprite = engine.graphics.get_sprite(healing_potion->name);
 
         // place them on random tiles
         for (int i = 0; i < 3; ++i) {
@@ -37,6 +43,13 @@ int main() {
             Tile& tile_2 = engine.dungeon.get_tile(pos_2);
             tile_2.item = heal_button;
         }
+        Vec pos_3= engine.dungeon.random_open_room_tile();
+        Tile& tile_3 = engine.dungeon.get_tile(pos_3);
+        tile_3.item = lightning_staff;
+
+        Vec pos_4= engine.dungeon.random_open_room_tile();
+        Tile& tile_4 = engine.dungeon.get_tile(pos_4);
+        tile_4.item = healing_potion;
         engine.run();
     }
     catch (std::exception& e) {
