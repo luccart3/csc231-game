@@ -11,3 +11,4 @@ bite bite.wav
 explosion explosion.wav
 magic magic.wav
 button-press button-press.wav
+pop pop.wav

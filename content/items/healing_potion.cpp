@@ -26,5 +26,6 @@ void Healing_Potion::interact(Engine& engine, Entity& entity) {
     Tile& tile = engine.dungeon.get_tile(position);
     entity.add_to_inventory(tile.item);
     engine.dungeon.remove_item(position);
+    engine.events.create_event<Sound>("pop");
 }
 
